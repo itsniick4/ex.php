@@ -1,6 +1,7 @@
 <?php
 
 $carrinho = [
+
     ["id" => 1, "nome" => "SSD 512GB", "preco" => 280.00, "quantidade" => 1],
     ["id" => 2, "nome" => "Memória RAM 8GB", "preco" => 150.00, "quantidade" => 2],
     ["id" => 3, "nome" => "Cabo HDMI 2.0", "preco" => 25.00, "quantidade" => 4],
