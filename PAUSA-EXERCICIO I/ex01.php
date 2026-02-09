@@ -14,25 +14,26 @@ $carrinho = [
 $totalGeral = 0;
 $totalItens = 0;
 
-echo "--- Resumo do Carrinho ---\n";
+echo "<h2>Resumo do Pedido:</h2>";
 
-
-
-//Momento honestidade. Foreach feito pela IA <3.
 foreach ($carrinho as $produto) {
     $subtotal = $produto['preco'] * $produto['quantidade'];
     $totalGeral += $subtotal;
     $totalItens += $produto['quantidade'];
 
-    echo "Produto: " . $produto['nome'] . " | Qtd: " . $produto['quantidade'] . " | Subtotal: R$ " . number_format($subtotal, 2, ',', '.') . "\n";
+    echo "<p><strong>" . $produto['nome'] . "</strong><br>";
+    echo "Quantidade: " . $produto['quantidade'] . "<br>";
+    echo "Subtotal: R$ " . number_format($subtotal, 2, ',', '.') . "</p>";
 }
 
-echo "--------------------------\n";
-echo "Total de itens no carrinho: " . $totalItens . "\n";
-echo "Valor Total a pagar: R$ " . number_format($totalGeral, 2, ',', '.') . "\n";
+// Cálculo do desconto de 10% como no exemplo
+$desconto = $totalGeral * 0.10;
+$totalFinal = $totalGeral - $desconto;
 
-
-
+echo "<hr>";
+echo "<p>Subtotal da Compra: R$ " . number_format($totalGeral, 2, ',', '.') . "<br>";
+echo "Desconto Aplicado (10%): R$ " . number_format($desconto, 2, ',', '.') . "<br>";
+echo "<strong>Total Final a Pagar: R$ " . number_format($totalFinal, 2, ',', '.') . "</strong></p>";
 
 
 
